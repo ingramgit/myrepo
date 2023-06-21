@@ -2,13 +2,13 @@ package com.myspace.error_action;
 
 import com.myspace.error_action.ErrorAction;
 
-rule "Offer for Diamond"
+rule "Return CallCWS"
 	when 
 		error: ErrorAction(type=="diamond")
 	then
 		error.setDiscount(15);
 	end
-rule "Offer for Gold"
+rule "Return SendEmailAndLogError"
 	when 
 		error: Product(type=="gold")
 	then
