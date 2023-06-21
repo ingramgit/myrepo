@@ -5,7 +5,7 @@ import com.myspace.error_action.ErrorAction;
 rule "Return CallCWS"
 	when 
 		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
-		       && (feedType=="MP_ITEM_MATCH" && errorDetails="Data_Error"))
+		       && (feedType=="MP_ITEM_MATCH" && errorDetails=="Data_Error"))
 	then
 		error.setInvokeAction("CallCWS");
 	end
