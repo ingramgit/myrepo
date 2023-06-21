@@ -13,7 +13,7 @@ rule "Return CallCWS"
 		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails!="Data_Error"))
 	then
-		error.setInvokeAction("CallCWS");
+		error.setInvokeAction("SendEmailAndLogError");
 	end
 rule "Return SendEmailAndLogError"
 	when 
