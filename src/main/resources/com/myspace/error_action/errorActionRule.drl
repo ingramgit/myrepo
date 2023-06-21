@@ -1,4 +1,4 @@
-package com.myspace.error_action;
+package com.integration.items.Item;
 
 import com.myspace.error_action.ErrorAction;
 
