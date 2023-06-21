@@ -13,11 +13,11 @@ rule "Return SendEmailAndLogError"
 	when 
 		error: Product(type=="gold")
 	then
-		error.setDiscount(25);
+		error.setInvokeAction("SendEmailAndLogError");
 	end
 rule "Return SendEmailAndLogError if MarketPlace not equal to Walmart"
 	when 
-		error: ErrorAction(marketplaceCode!="WALMART" || marketplaceCode!="walmart" || marketplaceCode!="Walmart")
+		error: ErrorAction(marketplaceCode!="WALMART" && marketplaceCode!="walmart" && marketplaceCode!="Walmart")
 	then
-		error.setDiscount(25);
+		error.setInvokeAction("SendEmailAndLogError");
 	end	
