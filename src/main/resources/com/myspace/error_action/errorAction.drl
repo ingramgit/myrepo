@@ -4,7 +4,7 @@ import com.myspace.error_action.ErrorAction;
 
 rule "Return CallCWS"
 	when 
-		error: ErrorAction(type=="diamond")
+		error: ErrorAction(marketplaceCode=="walmart" )
 	then
 		error.setDiscount(15);
 	end
