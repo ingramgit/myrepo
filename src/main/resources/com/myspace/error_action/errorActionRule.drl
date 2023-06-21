@@ -4,9 +4,10 @@ import com.myspace.error_action.ErrorAction;
 
 rule "Return CallCWS"
 	when 
-		error: ErrorAction(marketplaceCode=="walmart" )
+		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
+		       && ())
 	then
-		error.setDiscount(15);
+		error.setInvokeAction("CallCWS");
 	end
 rule "Return SendEmailAndLogError"
 	when 
