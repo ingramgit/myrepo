@@ -1,6 +1,6 @@
-package com.integration.items.Item;
+package com.integration.items;
 
-import com.myspace.error_action.ErrorAction;
+import com.integration.items.ErrorAction;
 
 rule "Return CallCWS"
 	when 
