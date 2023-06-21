@@ -9,15 +9,10 @@ rule "Return CallCWS"
 	then
 		error.setInvokeAction("CallCWS");
 	end
+rule "Return CallCWS"	
 	when 
 		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails!="Data_Error"))
-	then
-		error.setInvokeAction("SendEmailAndLogError");
-	end
-rule "Return SendEmailAndLogError"
-	when 
-		error: Product(type=="gold")
 	then
 		error.setInvokeAction("SendEmailAndLogError");
 	end
