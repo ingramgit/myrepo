@@ -4,14 +4,14 @@ import com.myspace.error_action.ErrorAction;
 
 rule "Return CallCWS"
 	when 
-		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
+		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails=="Data_Error"))
 	then
 		error.setInvokeAction("CallCWS");
 	end
 rule "Return SendEmailAndLogError if errorDetails not equal to Data_Error"	
 	when 
-		error: ErrorAction(marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart" 
+		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails!="Data_Error"))
 	then
 		error.setInvokeAction("SendEmailAndLogError_1");
