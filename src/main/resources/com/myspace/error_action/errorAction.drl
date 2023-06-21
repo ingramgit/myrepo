@@ -14,7 +14,7 @@ rule "Return SendEmailAndLogError"
 	then
 		error.setDiscount(25);
 	end
-rule "Offer for Gold"
+rule "Return SendEmailAndLogError if MarketPlace not equal to Walmart"
 	when 
 		error: Product(type=="gold")
 	then
