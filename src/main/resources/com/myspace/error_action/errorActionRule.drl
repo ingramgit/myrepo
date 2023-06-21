@@ -16,6 +16,13 @@ rule "Return SendEmailAndLogError if errorDetails not equal to Data_Error"
 	then
 		error.setInvokeAction("SendEmailAndLogError");
 	end
+rule "Return SendEmailAndLogError if errorDetails not equal to Data_Error"	
+	when 
+		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
+		       && (feedType=="MP_ITEM" || feedType=="PRICE" || feedType=="INVENTORY"))
+	then
+		error.setInvokeAction("SendEmailAndLogError");
+	end	
 rule "Return SendEmailAndLogError if MarketPlace not equal to Walmart"
 	when 
 		error: ErrorAction(marketplaceCode!="WALMART" && marketplaceCode!="walmart" && marketplaceCode!="Walmart")
