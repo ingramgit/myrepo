@@ -7,7 +7,7 @@ rule "Return CallCWS"
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (errorDetails=="NEW" || errorDetails=="INPROGRESS" || errorDetails=="SUCCESS"))
 	then
-		error.setInvokeAction("CallCWS");
+		error.setInvokeAction("NoAction");
 	end
 rule "Return CallCWS"
 	when 
