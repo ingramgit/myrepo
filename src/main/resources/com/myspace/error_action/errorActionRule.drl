@@ -5,6 +5,13 @@ import com.integration.items.ErrorAction;
 rule "Return CallCWS"
 	when 
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
+		       && (errorDetails=="NEW" || errorDetails=="INPROGRESS" || errorDetails=="SUCCESS"))
+	then
+		error.setInvokeAction("CallCWS");
+	end
+rule "Return CallCWS"
+	when 
+		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails=="Data_Error"))
 	then
 		error.setInvokeAction("CallCWS");
