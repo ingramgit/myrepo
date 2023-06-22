@@ -8,14 +8,14 @@ rule "Return CallCWS"
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails=="Data_Error"))
 	then
-		error.setInvokeAction("CallCWS");
+		error.setInvokeAction("CallCWSUpdateStatus");
 	end
 rule "Return SendEmailAndLogError if errorDetails not equal to Data_Error"	
 	when 
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (feedType=="MP_ITEM_MATCH" && errorDetails!="Data_Error"))
 	then
-		error.setInvokeAction("SendEmailAndLogError");
+		error.setInvokeAction("SendEmailUpdateStatusAndLogError");
 	end
 rule "Return SendEmailAndLogError if feedType equal to MP_ITEM/PRICE/INVENTORY"	
 	when 
