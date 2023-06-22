@@ -2,13 +2,7 @@ package com.integration.items;
 
 import com.integration.items.ErrorAction;
 
-rule "Return NoAction"
-	when 
-		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
-		       && (errorDetails=="NEW" || errorDetails=="INPROGRESS" || errorDetails=="SUCCESS"))
-	then
-		error.setInvokeAction("NoAction");
-	end
+
 rule "Return CallCWS"
 	when 
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
@@ -36,4 +30,11 @@ rule "Return SendEmailAndLogError if MarketPlace not equal to Walmart"
 		               || (feedType!="MP_ITEM_MATCH" && feedType!="MP_ITEM" && feedType!="PRICE" && feedType!="INVENTORY"))
 	then
 		error.setInvokeAction("SendEmailAndLogError");
+	end	
+rule "Return NoAction"
+	when 
+		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
+		       && (errorDetails=="NEW" || errorDetails=="INPROGRESS" || errorDetails=="SUCCESS"))
+	then
+		error.setInvokeAction("NoAction");
 	end	
