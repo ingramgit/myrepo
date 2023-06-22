@@ -2,7 +2,7 @@ package com.integration.items;
 
 import com.integration.items.ErrorAction;
 
-rule "Return CallCWS"
+rule "Return NoAction"
 	when 
 		error: ErrorAction((marketplaceCode=="WALMART" || marketplaceCode=="walmart" || marketplaceCode=="Walmart") 
 		       && (errorDetails=="NEW" || errorDetails=="INPROGRESS" || errorDetails=="SUCCESS"))
