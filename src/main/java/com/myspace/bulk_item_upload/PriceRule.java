@@ -67,7 +67,7 @@ public class PriceRule implements java.io.Serializable {
 		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
 	}
 
-	public MPItemMatchRule(int minSizeToProcess, int maxWaitInterval,
+	public PriceRule(int minSizeToProcess, int maxWaitInterval,
 			java.lang.String reprocessFailed, int maxRetries,
 			java.lang.String sendEmailOnMaxRetries,
 			java.lang.String maxRecordsToSendToMarketplace) {
