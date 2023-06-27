@@ -5,11 +5,11 @@ package com.integration.items;
  */
 public class PriceRule implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
 	private int minSizeToProcess;
 	private int maxWaitInterval;
-	private java.lang.String reprocessFailed;
+	private boolean reprocessFailed;
 	private int maxRetries;
 	private java.lang.String sendEmailOnMaxRetries;
 	private java.lang.String maxRecordsToSendToMarketplace;
@@ -31,14 +31,6 @@ public class PriceRule implements java.io.Serializable {
 
 	public void setMaxWaitInterval(int maxWaitInterval) {
 		this.maxWaitInterval = maxWaitInterval;
-	}
-
-	public java.lang.String getReprocessFailed() {
-		return this.reprocessFailed;
-	}
-
-	public void setReprocessFailed(java.lang.String reprocessFailed) {
-		this.reprocessFailed = reprocessFailed;
 	}
 
 	public int getMaxRetries() {
@@ -66,8 +58,16 @@ public class PriceRule implements java.io.Serializable {
 		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
 	}
 
+	public boolean isReprocessFailed() {
+		return this.reprocessFailed;
+	}
+
+	public void setReprocessFailed(boolean reprocessFailed) {
+		this.reprocessFailed = reprocessFailed;
+	}
+
 	public PriceRule(int minSizeToProcess, int maxWaitInterval,
-			java.lang.String reprocessFailed, int maxRetries,
+			boolean reprocessFailed, int maxRetries,
 			java.lang.String sendEmailOnMaxRetries,
 			java.lang.String maxRecordsToSendToMarketplace) {
 		this.minSizeToProcess = minSizeToProcess;
@@ -77,6 +77,5 @@ public class PriceRule implements java.io.Serializable {
 		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
 		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
 	}
-
 
 }
