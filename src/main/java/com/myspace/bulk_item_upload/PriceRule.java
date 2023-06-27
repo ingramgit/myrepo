@@ -15,7 +15,7 @@ public class PriceRule implements java.io.Serializable {
 	private java.lang.String sendEmailOnMaxRetries;
 	private java.lang.String maxRecordsToSendToMarketplace;
 
-	public MPItemMatchRule() {
+	public PriceRule() {
 	}
 
 	public int getMinSizeToProcess() {
