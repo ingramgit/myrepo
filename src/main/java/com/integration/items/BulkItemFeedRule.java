@@ -8,19 +8,11 @@ public class BulkItemFeedRule implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.String reprocessFailed;
+	private boolean reprocessFailed;
 	private int maxRetries;
 	private String sendEmailOnMaxRetries;
 
 	public BulkItemFeedRule() {
-	}
-
-	public java.lang.String getReprocessFailed() {
-		return this.reprocessFailed;
-	}
-
-	public void setReprocessFailed(java.lang.String reprocessFailed) {
-		this.reprocessFailed = reprocessFailed;
 	}
 
 	public int getMaxRetries() {
@@ -39,7 +31,15 @@ public class BulkItemFeedRule implements java.io.Serializable {
 		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
 	}
 
-	public BulkItemFeedRule(java.lang.String reprocessFailed, int maxRetries,
+	public boolean isReprocessFailed() {
+		return this.reprocessFailed;
+	}
+
+	public void setReprocessFailed(boolean reprocessFailed) {
+		this.reprocessFailed = reprocessFailed;
+	}
+
+	public BulkItemFeedRule(boolean reprocessFailed, int maxRetries,
 			java.lang.String sendEmailOnMaxRetries) {
 		this.reprocessFailed = reprocessFailed;
 		this.maxRetries = maxRetries;
