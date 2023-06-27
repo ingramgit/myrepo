@@ -8,9 +8,6 @@ public class PriceRule implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
 
-    public PriceRule() {
-    }
-
 	private int minSizeToProcess;
 	private int maxWaitInterval;
 	private java.lang.String reprocessFailed;
