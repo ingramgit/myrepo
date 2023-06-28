@@ -10,7 +10,7 @@ public class BulkItemFeedRule implements java.io.Serializable {
 
 	private boolean reprocessFailed;
 	private int maxRetries;
-	private String sendEmailOnMaxRetries;
+	private boolean sendEmailOnMaxRetries;
 
 	public BulkItemFeedRule() {
 	}
@@ -23,14 +23,6 @@ public class BulkItemFeedRule implements java.io.Serializable {
 		this.maxRetries = maxRetries;
 	}
 
-	public java.lang.String getSendEmailOnMaxRetries() {
-		return this.sendEmailOnMaxRetries;
-	}
-
-	public void setSendEmailOnMaxRetries(java.lang.String sendEmailOnMaxRetries) {
-		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
-	}
-
 	public boolean isReprocessFailed() {
 		return this.reprocessFailed;
 	}
@@ -39,8 +31,16 @@ public class BulkItemFeedRule implements java.io.Serializable {
 		this.reprocessFailed = reprocessFailed;
 	}
 
+	public boolean isSendEmailOnMaxRetries() {
+		return this.sendEmailOnMaxRetries;
+	}
+
+	public void setSendEmailOnMaxRetries(boolean sendEmailOnMaxRetries) {
+		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
+	}
+
 	public BulkItemFeedRule(boolean reprocessFailed, int maxRetries,
-			java.lang.String sendEmailOnMaxRetries) {
+			boolean sendEmailOnMaxRetries) {
 		this.reprocessFailed = reprocessFailed;
 		this.maxRetries = maxRetries;
 		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
