@@ -13,7 +13,7 @@ public class MPItemMatchRule implements java.io.Serializable {
 	private boolean reprocessFailed;
 	private int maxRetries;
 	private java.lang.String sendEmailOnMaxRetries;
-	private java.lang.String maxRecordsToSendToMarketplace;
+	private Integer maxRecordsToSendToMarketplace;
 
 	public MPItemMatchRule() {
 	}
@@ -50,15 +50,6 @@ public class MPItemMatchRule implements java.io.Serializable {
 		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
 	}
 
-	public java.lang.String getMaxRecordsToSendToMarketplace() {
-		return this.maxRecordsToSendToMarketplace;
-	}
-
-	public void setMaxRecordsToSendToMarketplace(
-			java.lang.String maxRecordsToSendToMarketplace) {
-		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
-	}
-
 	public boolean isReprocessFailed() {
 		return this.reprocessFailed;
 	}
@@ -67,10 +58,19 @@ public class MPItemMatchRule implements java.io.Serializable {
 		this.reprocessFailed = reprocessFailed;
 	}
 
+	public java.lang.Integer getMaxRecordsToSendToMarketplace() {
+		return this.maxRecordsToSendToMarketplace;
+	}
+
+	public void setMaxRecordsToSendToMarketplace(
+			java.lang.Integer maxRecordsToSendToMarketplace) {
+		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
+	}
+
 	public MPItemMatchRule(int minSizeToProcess, int maxWaitInterval,
 			boolean reprocessFailed, int maxRetries,
 			java.lang.String sendEmailOnMaxRetries,
-			java.lang.String maxRecordsToSendToMarketplace) {
+			java.lang.Integer maxRecordsToSendToMarketplace) {
 		this.minSizeToProcess = minSizeToProcess;
 		this.maxWaitInterval = maxWaitInterval;
 		this.reprocessFailed = reprocessFailed;
