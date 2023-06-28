@@ -7,10 +7,26 @@ import com.integration.items.PriceRule;
 
 rule "update BulkItemFeedRule"
 	when 
-		bulkItemFeed: com.integration.items.BulkItemFeedRule()
+		bulkItemFeed: BulkItemFeedRule()
 	then
-		bulkItemFeed.setMaxRetries(3);
-		bulkItemFeed.setReprocessFailed(true);
-		bulkItemFeed.setSendEmailOnMaxRetries(true);
+		
 	end
+rule "update InventoryRule"
+	when 
+		bulkItemFeed: InventoryRule()
+	then
+		
+	end
+rule "update MPItemMatchRule"
+	when 
+		bulkItemFeed: MPItemMatchRule()
+	then
+		
+	end
+rule "update PriceRule"
+	when 
+		bulkItemFeed: PriceRule()
+	then
+		
+	end	
 	
