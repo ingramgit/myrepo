@@ -12,7 +12,7 @@ public class PriceRule implements java.io.Serializable {
 	private boolean reprocessFailed;
 	private int maxRetries;
 	private boolean sendEmailOnMaxRetries;
-	private java.lang.String maxRecordsToSendToMarketplace;
+	private int maxRecordsToSendToMarketplace;
 
 	public PriceRule() {
 	}
@@ -41,15 +41,6 @@ public class PriceRule implements java.io.Serializable {
 		this.maxRetries = maxRetries;
 	}
 
-	public java.lang.String getMaxRecordsToSendToMarketplace() {
-		return this.maxRecordsToSendToMarketplace;
-	}
-
-	public void setMaxRecordsToSendToMarketplace(
-			java.lang.String maxRecordsToSendToMarketplace) {
-		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
-	}
-
 	public boolean isReprocessFailed() {
 		return this.reprocessFailed;
 	}
@@ -66,10 +57,18 @@ public class PriceRule implements java.io.Serializable {
 		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
 	}
 
+	public int getMaxRecordsToSendToMarketplace() {
+		return this.maxRecordsToSendToMarketplace;
+	}
+
+	public void setMaxRecordsToSendToMarketplace(
+			int maxRecordsToSendToMarketplace) {
+		this.maxRecordsToSendToMarketplace = maxRecordsToSendToMarketplace;
+	}
+
 	public PriceRule(int minSizeToProcess, int maxWaitInterval,
 			boolean reprocessFailed, int maxRetries,
-			boolean sendEmailOnMaxRetries,
-			java.lang.String maxRecordsToSendToMarketplace) {
+			boolean sendEmailOnMaxRetries, int maxRecordsToSendToMarketplace) {
 		this.minSizeToProcess = minSizeToProcess;
 		this.maxWaitInterval = maxWaitInterval;
 		this.reprocessFailed = reprocessFailed;
