@@ -11,7 +11,7 @@ public class PriceRule implements java.io.Serializable {
 	private int maxWaitInterval;
 	private boolean reprocessFailed;
 	private int maxRetries;
-	private java.lang.String sendEmailOnMaxRetries;
+	private boolean sendEmailOnMaxRetries;
 	private java.lang.String maxRecordsToSendToMarketplace;
 
 	public PriceRule() {
@@ -41,14 +41,6 @@ public class PriceRule implements java.io.Serializable {
 		this.maxRetries = maxRetries;
 	}
 
-	public java.lang.String getSendEmailOnMaxRetries() {
-		return this.sendEmailOnMaxRetries;
-	}
-
-	public void setSendEmailOnMaxRetries(java.lang.String sendEmailOnMaxRetries) {
-		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
-	}
-
 	public java.lang.String getMaxRecordsToSendToMarketplace() {
 		return this.maxRecordsToSendToMarketplace;
 	}
@@ -66,9 +58,17 @@ public class PriceRule implements java.io.Serializable {
 		this.reprocessFailed = reprocessFailed;
 	}
 
+	public boolean isSendEmailOnMaxRetries() {
+		return this.sendEmailOnMaxRetries;
+	}
+
+	public void setSendEmailOnMaxRetries(boolean sendEmailOnMaxRetries) {
+		this.sendEmailOnMaxRetries = sendEmailOnMaxRetries;
+	}
+
 	public PriceRule(int minSizeToProcess, int maxWaitInterval,
 			boolean reprocessFailed, int maxRetries,
-			java.lang.String sendEmailOnMaxRetries,
+			boolean sendEmailOnMaxRetries,
 			java.lang.String maxRecordsToSendToMarketplace) {
 		this.minSizeToProcess = minSizeToProcess;
 		this.maxWaitInterval = maxWaitInterval;
