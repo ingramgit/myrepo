@@ -1,2 +1,16 @@
 package com.integration.items;
 
+import com.integration.items.BulkItemFeedRule;
+import com.integration.items.InventoryRule;
+import com.integration.items.MPItemMatchRule;
+import com.integration.items.PriceRule;
+
+rule "update BulkItemFeedRule"
+	when 
+		bulkItemFeed: com.integration.items.BulkItemFeedRule()
+	then
+		bulkItemFeed.setMaxRetries(3);
+		bulkItemFeed.setReprocessFailed(true);
+		bulkItemFeed.setSendEmailOnMaxRetries(true);
+	end
+	
