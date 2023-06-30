@@ -11,7 +11,7 @@ rule "update BulkItemFeedRule"
 		bulkItemUpload: BulkItemUploadRules()
 	then
 		
-		BulkItemFeedRule itemFeedRule = bulkItemUpload.getBulkItemFeedRule();
+		BulkItemFeedRule itemFeedRule = bulkItemUpload.getBulkItemUploadRule();
 		itemFeedRule.setMinSizeToProcess(10);
 		
 	end
