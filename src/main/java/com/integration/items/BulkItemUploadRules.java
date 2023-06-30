@@ -6,12 +6,60 @@ package com.integration.items;
 
 public class BulkItemUploadRules implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public BulkItemUploadRules() {
-    }
+	private com.integration.items.BulkItemFeedRule bulkItemFeedRule;
+	private com.integration.items.MPItemMatchRule mpItemMatchRule;
+	private com.integration.items.PriceRule priceRule;
+	private com.integration.items.InventoryRule inventoryRule;
 
+	public BulkItemUploadRules() {
+	}
 
+	public com.integration.items.BulkItemFeedRule getBulkItemFeedRule() {
+		return this.bulkItemFeedRule;
+	}
 
+	public void setBulkItemFeedRule(
+			com.integration.items.BulkItemFeedRule bulkItemFeedRule) {
+		this.bulkItemFeedRule = bulkItemFeedRule;
+	}
+
+	public com.integration.items.MPItemMatchRule getMpItemMatchRule() {
+		return this.mpItemMatchRule;
+	}
+
+	public void setMpItemMatchRule(
+			com.integration.items.MPItemMatchRule mpItemMatchRule) {
+		this.mpItemMatchRule = mpItemMatchRule;
+	}
+
+	public com.integration.items.PriceRule getPriceRule() {
+		return this.priceRule;
+	}
+
+	public void setPriceRule(com.integration.items.PriceRule priceRule) {
+		this.priceRule = priceRule;
+	}
+
+	public com.integration.items.InventoryRule getInventoryRule() {
+		return this.inventoryRule;
+	}
+
+	public void setInventoryRule(
+			com.integration.items.InventoryRule inventoryRule) {
+		this.inventoryRule = inventoryRule;
+	}
+
+	public BulkItemUploadRules(
+			com.integration.items.BulkItemFeedRule bulkItemFeedRule,
+			com.integration.items.MPItemMatchRule mpItemMatchRule,
+			com.integration.items.PriceRule priceRule,
+			com.integration.items.InventoryRule inventoryRule) {
+		this.bulkItemFeedRule = bulkItemFeedRule;
+		this.mpItemMatchRule = mpItemMatchRule;
+		this.priceRule = priceRule;
+		this.inventoryRule = inventoryRule;
+	}
 
 }
