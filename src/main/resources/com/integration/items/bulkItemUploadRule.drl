@@ -17,6 +17,9 @@ rule "update BulkItemFeedRule"
 		MPItemMatchRule mpItemMatchRule = bulkItemUpload.getMpItemMatchRule();
 		mpItemMatchRule.setMinSizeToProcess(10);
 		
+		PriceRule priceRule = bulkItemUpload.getPriceRule();
+		mpItemMatchRule.setMinSizeToProcess(10);
+		
 	end
 
 	
