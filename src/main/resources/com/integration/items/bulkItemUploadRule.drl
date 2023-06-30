@@ -8,26 +8,12 @@ import com.integration.items.BulkItemUploadRules;
 
 rule "update BulkItemFeedRule"
 	when 
-		bulkItemFeed: com.integration.items.BulkItemUploadRules( )BulkItemFeedRule()
+		bulkItemUpload: BulkItemUploadRules()
 	then
+		
+		BulkItemFeedRule itemFeedRule = bulkItemUpload.getBulkItemFeedRule();
+		itemFeedRule.setMinSizeToProcess(10);
 		
 	end
-rule "update InventoryRule"
-	when 
-		bulkItemFeed: InventoryRule()
-	then
-		
-	end
-rule "update MPItemMatchRule"
-	when 
-		bulkItemFeed: MPItemMatchRule()
-	then
-		
-	end
-rule "update PriceRule"
-	when 
-		bulkItemFeed: PriceRule()
-	then
-		
-	end	
+
 	
