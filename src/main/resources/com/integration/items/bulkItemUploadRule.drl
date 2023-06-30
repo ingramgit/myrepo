@@ -4,10 +4,11 @@ import com.integration.items.BulkItemFeedRule;
 import com.integration.items.InventoryRule;
 import com.integration.items.MPItemMatchRule;
 import com.integration.items.PriceRule;
+import com.integration.items.BulkItemUploadRules;
 
 rule "update BulkItemFeedRule"
 	when 
-		bulkItemFeed: BulkItemFeedRule()
+		bulkItemFeed: com.integration.items.BulkItemUploadRules( )BulkItemFeedRule()
 	then
 		
 	end
